@@ -22,8 +22,6 @@ def timed(func):
         return result
     return wrapper
 
-# --- Ejemplo de aplicación (tu función bubble_sort) ---
-
 
 """ 
  Bubble Sort funciona comparando elementos adyacentes y, 
@@ -53,9 +51,8 @@ Ordena una lista de diccionarios 'arr' basándose en el valor de una 'key' espec
 # ... (imports y el decorador 'timed') ...
 
 
-# DEBUG: Imprimimos la lista final antes de retornarla
 
-#@timed # Aplica el decorador 'timed' a la función siguiente.
+ # Aplica el decorador 'timed' a la función siguiente.
 @timed
 def bubble_sort (arr, key, ascending=True):
     n = len(arr) # para obtener el numero total de la lista. Basicamente la longitud de la lista que usaremos en la busqueda
@@ -105,7 +102,7 @@ def bubble_sort (arr, key, ascending=True):
         limit (int, optional): El número máximo de Pokémon a mostrar. Por defecto es 10.
     """
 def print_pokemon_list(pokemon_list, title="lista de pokemon", limit=10):
-    print(f"\n--- {title} ---") # <-- ¡Reemplázala con esta línea! (añade los saltos de línea y los guiones)
+    print(f"\n--- {title} ---") #
     if not pokemon_list:
         print("La lista de Pokémon está vacía.")
         return
