@@ -3,6 +3,7 @@ import requests
 import time
 
 from funciones_busqueda import linear_search
+from funciones_ordenamiento import bubble_sort, print_pokemon_list
 
 
 # Funciones
@@ -85,7 +86,9 @@ if __name__ == "__main__":
             print("Busqueda binaria")
         elif (user_option == "3"):
             # Ordenamiento 1
-            print("Ordenamiento 1")
+            sorted_pokemons_bubble = bubble_sort(pokemons_list, 'height', ascending=True)
+            print_pokemon_list(sorted_pokemons_bubble, "Pokémon ordenados por altura (ascendente) con Bubble Sort", limit=10)
+
         elif (user_option == "4"):
             # Ordenamiento 2
             print("Ordenamiento 2")
