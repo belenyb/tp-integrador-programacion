@@ -89,7 +89,7 @@ def get_pokemons(limit):
 """## Ejecución principal"""
 
 if __name__ == "__main__":
-    GET_POKEMONS_LIMIT = 50
+    GET_POKEMONS_LIMIT = 150
 
     # Llamamos a la función para obtener los datos y guardarlos en pokemons_list
     pokemons_list = get_pokemons(GET_POKEMONS_LIMIT)
