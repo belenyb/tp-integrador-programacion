@@ -1,7 +1,7 @@
 # Imports
 import requests
 import time
-
+import timeit
 from funciones_busqueda import linear_search
 from funciones_ordenamiento import bubble_sort, print_pokemon_list, quick_sort
 
@@ -68,31 +68,45 @@ def get_pokemons(limit):
 """## Ejecución principal"""
 
 if __name__ == "__main__":
-    GET_POKEMONS_LIMIT = 50
+    GET_POKEMONS_LIMIT = 150
 
     # Llamamos a la función para obtener los datos y guardarlos en pokemons_list
     pokemons_list = get_pokemons(GET_POKEMONS_LIMIT)
 
+    
     if not pokemons_list:
         print("Error al obtener los pokemons.")
     else:
         # Acá ejecutamos los algoritmos de búsqueda y ordenamiento
-        user_option = input("Ingrese la operacion que desea realizar: 1. Busqueda lineal 2. Busqueda binaria 3. Ordenamiento Bubble por altura:, 4. Ordenamiento Quick Sort: ")
-        if (user_option == "1"):
-            desired_pokemon = input("Por favor, ingrese el pokemon que desea buscar: ")
-            linear_search_response = linear_search(pokemons_list, desired_pokemon)
-        elif (user_option == "2"):
-            # Busqueda binaria
-            print("Busqueda binaria")
-        elif (user_option == "3"):
-            # Ordenamiento 1
-            sorted_pokemons_bubble = bubble_sort(pokemons_list, 'height', ascending=True)
-            print_pokemon_list(sorted_pokemons_bubble, "Pokémon ordenados por altura (ascendente) con Bubble Sort", limit=GET_POKEMONS_LIMIT)
+        run = True
+        while run:
+            user_option = input("Ingrese la operacion que desea realizar:0. Salir 1. Busqueda lineal 2. Busqueda binaria 3. Ordenamiento Bubble por altura:, 4. Ordenamiento Quick Sort: ")
+            if (user_option == "1"):
+                desired_pokemon = input("Por favor, ingrese el pokemon que desea buscar: ")
+                linear_search_response = linear_search(pokemons_list, desired_pokemon)
+            elif (user_option == "2"):
+                # Busqueda binaria
+                print("Busqueda binaria")
+            elif (user_option == "3"):
+                # Ordenamiento 1
+                sorted_pokemons_bubble = bubble_sort(pokemons_list, 'height', ascending=True)
+                print_pokemon_list(sorted_pokemons_bubble, "Pokémon ordenados por altura (ascendente) con Bubble Sort", limit=GET_POKEMONS_LIMIT)
 
-        elif (user_option == "4"):
-            # Ordenamiento 2
-            sorted_pokemons_quick = quick_sort(pokemons_list, 'height', ascending=True)
-            print_pokemon_list(sorted_pokemons_quick, "Pokémon ordenados por altura (ascendente) con Quick Sort", limit=GET_POKEMONS_LIMIT)
-        else:
-            print("Opcion no valida.")
-            exit
+            elif (user_option == "4"):
+                # Ordenamiento 2
+                sorted_pokemons_quick = quick_sort(pokemons_list, 'height', ascending=True)
+                print_pokemon_list(sorted_pokemons_quick, "Pokémon ordenados por altura (ascendente) con Quick Sort", limit=GET_POKEMONS_LIMIT)
+            elif (user_option == "5"):
+            # Ordenamiento por nombre
+                sorted_pokemons_name = bubble_sort(pokemons_list, 'name', ascending=True)
+                print_pokemon_list(sorted_pokemons_name, "Pokémon ordenados por nombre (ascendente) con Bubble Sort", limit=GET_POKEMONS_LIMIT)
+            elif (user_option == "6"):
+                # Ordenamiento por nombre descendente
+                sorted_pokemons_name_desc = quick_sort(pokemons_list, 'name', ascending=False)
+                print_pokemon_list(sorted_pokemons_name_desc, "Pokémon ordenados por nombre (descendente) con Quick Sort", limit=GET_POKEMONS_LIMIT)
+            elif (user_option == "0"):
+                print("Saliendo del programa...")
+                run = False
+            else:
+                print("Opcion no valida.")
+                
