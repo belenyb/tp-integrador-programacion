@@ -77,7 +77,7 @@ if __name__ == "__main__":
         print("Error al obtener los pokemons.")
     else:
         # Acá ejecutamos los algoritmos de búsqueda y ordenamiento
-        user_option = input("Ingrese la operacion que desea realizar: 1. Busqueda lineal 2. Busqueda binaria 3. Ordenamiento Bubble por altura:, 4. Ordenamiento Quick Sort: ")
+        user_option = input("Ingrese la operacion que desea realizar: 1. Busqueda lineal 2. Busqueda binaria 3. Ordenamiento Bubble por altura: 4. Ordenamiento Quick Sort: ")
         if (user_option == "1"):
             desired_pokemon = input("Por favor, ingrese el pokemon que desea buscar: ")
             linear_search_response = linear_search(pokemons_list, desired_pokemon)
