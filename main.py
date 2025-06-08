@@ -1,7 +1,8 @@
 # Imports
+import pprint
 import requests
 import timeit
-from funciones_busqueda import linear_search
+from funciones_busqueda import binary_search, linear_search
 from funciones_ordenamiento import bubble_sort, print_pokemon_list, quick_sort
 
 
@@ -67,12 +68,12 @@ def get_pokemons(limit):
 # Ejecución principal
 
 if __name__ == "__main__":
-    GET_POKEMONS_LIMIT = 3
+    GET_POKEMONS_LIMIT = 50
     runProgram = True
 
     # Llamamos a la función para obtener los datos y guardarlos en pokemons_list
     pokemons_list = get_pokemons(GET_POKEMONS_LIMIT)
-
+    pprint.pprint(pokemons_list)
 
     if not pokemons_list:
         print("Error al obtener los pokemons.")
@@ -81,23 +82,38 @@ if __name__ == "__main__":
             # Acá ejecutamos los algoritmos de búsqueda y ordenamiento
             user_option = input("Ingrese la operacion que desea realizar: \n0. Salir \n1. Busqueda por nombre \n2. Busqueda por altura \n3. Ordenamiento por altura \n4. Ordenamiento por nombre: ")
             if (user_option == "1"):
+
+                # Búsqueda por nombre
                 desired_pokemon = input("Por favor, ingrese el pokemon que desea buscar: ")
 
                 start_time = timeit.default_timer()
-                linear_search_response = linear_search(pokemons_list, desired_pokemon)
+                linear_search(pokemons_list, 'name', desired_pokemon)
                 end_time = timeit.default_timer()
-                print("Tiempo de ejecución para linear_search:", end_time - start_time, "segundos")
-                # TODO poner binaria y medir los resultados
-                # TODO buscar por nombre
+                print("Tiempo de ejecución para linear_search por nombre:", end_time - start_time, "segundos")
 
-            elif (user_option == "2"):
-                # TODO agregar lineal y medir tiempo
-                # TODO Buscar por altura
-                # Busqueda binaria
                 start_time = timeit.default_timer()
-                print("Busqueda binaria")
+                binary_search(pokemons_list, 'name', desired_pokemon)
                 end_time = timeit.default_timer()
                 print("Tiempo de ejecución para binary_search:", end_time - start_time, "segundos")
+
+                print(f"\n\n--- Fin de la ejecución de la opción {user_option} ---\n")
+
+            elif (user_option == "2"):
+
+                # Búsqueda por altura
+                desired_height = input("Por favor, ingrese la altura que desea buscar (en decímetros): ")
+
+                start_time = timeit.default_timer()
+                linear_search(pokemons_list, 'height', desired_height)
+                end_time = timeit.default_timer()
+                print("Tiempo de ejecución para linear_search por altura:", end_time - start_time, "segundos")
+
+                start_time = timeit.default_timer()
+                binary_search(pokemons_list, 'height', desired_height)
+                end_time = timeit.default_timer()
+                print("Tiempo de ejecución para binary_search:", end_time - start_time, "segundos")
+
+                print(f"\n\n--- Fin de la ejecución de la opción {user_option} ---\n")
 
             elif (user_option == "3"):
                 # Bubble sort
