@@ -137,7 +137,7 @@ if __name__ == "__main__":
                 end_time = timeit.default_timer()
 
                 print_pokemon_list(sorted_pokemons_name, "Pokémon ordenados por nombre (ascendente) con Bubble Sort", limit=GET_POKEMONS_LIMIT)
-
+                print("Tiempo de ejecución para bubble_sort:", end_time - start_time, "segundos")
                 # Ordenamiento por nombre descendente
                 start_time = timeit.default_timer()
                 sorted_pokemons_name_desc = quick_sort(pokemons_list, 'name', ascending=False)

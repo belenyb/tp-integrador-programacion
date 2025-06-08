@@ -88,9 +88,25 @@ Implementa el algoritmo de búsqueda binaria, el cual requiere que la lista est�
 
 #### Relativas a algoritmos de ordenamiento
 
-##### bubble_sort()
+Estas funciones, `bubble_sort` y `quick_sort`, se encargan de reordenar la lista de Pokémon `pokemons_list` basándose en un criterio específico (`key`, que puede ser 'name' o 'height') y en un orden determinado (ascending, que puede ser True para ascendente o False para descendente).
 
-##### quick_sort()
+##### bubble_sort(arr, key, ascending=True)
+
+Implementa el algoritmo de ordenamiento Bubble Sort. Este método compara repetidamente pares de elementos adyacentes en la lista. Si están en el orden incorrecto (según el parámetro ascending), los intercambia. Este proceso se repite hasta que no se necesitan más intercambios, lo cual indica que la lista está ordenada.
+**Preparación de los Datos:** Antes de realizar las comparaciones, la función crea una copia de la lista original para evitar modificaciones inesperadas. También se extraen los valores a comparar, `name` y `height` de cada elemento. En el caso de los nombres,los convierte a minúsculas para asegurar una comparación insensible a mayúsculas y minúsculas.
+**Caso de Éxito:** Si la lista original ya está ordenada, o después de varias iteraciones, el algoritmo logra colocar todos los elementos en el orden correcto, la función devuelve la lista ordenada.
+**Caso de Falla:** Si la clave especificada `key` no existe en alguno de los diccionarios de Pokémon, o si los valores a comparar no son del tipo esperado (por ejemplo, si `height` no es numérico), la función imprime un mensaje de error y devuelve la copia de la lista sin modificar, indicando que el ordenamiento no pudo completarse.
+
+##### quick_sort(arr, key, ascending=True)
+
+Implementa el algoritmo de ordenamiento Quick Sort. Este método utiliza la estrategia de "divide y vencerás" para ordenar la lista de forma eficiente. Selecciona un elemento como `pivot` y particiona la lista en sublistas `left`, `middle`, `right`: elementos menores al pivote y elementos mayores al pivote. Luego, aplica recursivamente el mismo proceso a las sublistas. 
+**Preparacion de los Datos:** La función extrae los valores a comparar y los prepara adecuadamente. Para los nombres, los convierte a minúsculas. Para las alturas, intenta convertirlos a números, manejando posibles errores si no son válidos.
+**Caso de Éxito:**  Después de aplicar recursivamente el proceso de partición y ordenamiento a las sublistas, la función devuelve la lista completamente ordenada.
+**Caso de Falla:** Si la clave especificada no existe en algún diccionario de Pokémon, o si los valores a comparar no son del tipo esperado, la función imprime un mensaje de error y devuelve la lista original sin modificar. Esto asegura que el programa no se detenga abruptamente si encuentra datos inesperados.
+
+##### print_pokemon_list(pokemon_list, title="Lista de Pokémon", limit=10)
+
+Esta es una función auxiliar diseñada para mostrar las listas de Pokémon en la consola de una manera clara y formateada. Permite especificar un título para la lista y limitar la cantidad de Pokémon que se imprimen, lo cual es muy útil para revisar los resultados de los ordenamientos sin saturar la pantalla. Además, se encarga de convertir la altura de los Pokémon de decímetros a centímetros para una mejor comprensión y maneja casos donde los datos puedan estar ausentes o en formatos inesperados.
 
 ## Reflexiones del equipo
 
