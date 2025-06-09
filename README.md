@@ -10,6 +10,9 @@
 
 Este proyecto busca implementar y comprender el funcionamiento de los algoritmos de búsqueda lineal y binaria, y los algoritmos de ordenamiento bubble sort y quick sort mediante el uso del lenguaje de programación Python. Para ello se utilizarán datos provenientes de la [Poké API](https://pokeapi.co/), sirviendo como una oportunidad para integrar diversos conceptos como el uso de APIs y de librerías de Python.
 
+## Video explicativo
+
+La presentación de este proyecto se puede ver en este [enlace](https://youtu.be/h9AMFHeEWss).
 
 ## Objetivos del proyecto
 
