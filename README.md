@@ -8,7 +8,7 @@
 
 ## Carpeta digital 
 
-En este [enlace](https://drive.google.com/drive/folders/1xX3k4BufiF828CFBPqrVavEFupXtGB5e?usp=drive_link) se encuentra la carpeta digital de Google Drive con todo el contenido del proyecto.
+En este [enlace](https://drive.google.com/drive/folders/1xX3k4BufiF828CFBPqrVavEFupXtGB5e?usp=drive_link) se encuentra la carpeta digital de Google Drive con todo el contenido del proyecto. El mismo contenido también puede encontrarse en el directorio `/Carpeta Digital` del presente repositorio.
 
 ## Descripción
 
