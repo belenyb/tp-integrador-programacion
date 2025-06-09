@@ -1,10 +1,14 @@
 # Trabajo Práctico Integrador de Programación: Búsqueda y Ordenamiento
 ## "Análisis y aplicación de búsqueda y ordenamiento en Python sobre datos de la Poké API"
 
-## Integrantes:
+## Integrantes
 
 - Arturo Kaadú, Comisión 15
 - Belén Yarde Buller, Comisión 23
+
+## Carpeta digital 
+
+En este [enlace](https://drive.google.com/drive/folders/1xX3k4BufiF828CFBPqrVavEFupXtGB5e?usp=drive_link) se encuentra la carpeta digital de Google Drive con todo el contenido del proyecto.
 
 ## Descripción
 
